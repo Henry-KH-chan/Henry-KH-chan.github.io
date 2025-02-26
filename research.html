@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<!--
+  Hyperspace by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>My Research</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+  
+  <!-- Header -->
+  <header id="header">
+    <a href="index.html" class="title">Henry's Optics</a>
+    <nav>
+      <ul>
+         <li><a href="index.html">Home</a></li>
+          <li><a href="me.html">Henry</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Wrapper -->
+  <div id="wrapper">
+    
+    <!-- Main Content -->
+    <section id="main" class="wrapper">
+      <div class="inner">
+        
+        <!-- Main heading -->
+        <h1 class="major">Research Highlights</h1>
+            <img src="images/lab.jpg" alt="HKUST lab" style="width: 500px; height: auto;">
+        <p>
+          Welcome to my research page. Below are some of my primary research focuses, 
+          including optical microscopy techniques, Laue microdiffraction, and advanced 
+          X-ray scattering analysis methods.
+        </p>
+
+        <!-- DInM Microscope -->
+        <section>
+          <h2>DInM Microscope</h2>
+          <p>
+            The DInM microscope is a reflected-light, common-path interferometry technique 
+            designed for real-time surface characterization. With an axial resolution of 
+            around <strong>0.57&nbsp;nm</strong>, it has been successfully applied to measure 
+            step heights, observe in-situ silicon buckling on elastomers, and investigate 
+            martensitic phase transformations.
+          </p>
+          <p>
+            I developed a specialized DInM microscope that can vary the beam shear distance 
+            to study the morphology of specimen surfaces under different conditions. For 
+            further details, refer to 
+            <a href="https://iopscience.iop.org/article/10.1088/1361-6501/ac9ed2/meta">this paper</a>.
+          </p>
+          <!-- Example images -->
+  <div class="images">
+    <img src="images/DInM microscope image 1.jpg" alt="DInM microscope image 1" style="width: 500px; height: auto;">
+    <br>
+    <div class="video-container">
+      <video controls style="width: 500px; height: auto;">
+        <source src="videos/NiTi_transformation.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video-container">
+      <video controls style="width: 500px; height: auto;">
+        <source src="videos/si_buckling.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <img src="images/DInM microscope image 2.jpg" alt="DInM microscope image 2" style="width: 500px; height: auto;">
+  </div>
+        </section>
+
+        <!-- Synchrotron Laue Microdiffraction -->
+        <section>
+          <h2>Synchrotron Laue Microdiffraction</h2>
+            <img src="images/micro_diffraction.jpg" alt="micro diffraction pitch" style="width: 1000px; height: auto;"/>
+          <p>
+            Laue microdiffraction is widely employed to determine crystallographic information, 
+            grain orientations, localized strains, heterogeneous phases, and precipitates 
+            in materials. However, the analysis of Laue microdiffraction data can be both 
+            time-consuming and computationally intensive.
+          </p>
+          <p>
+            The newly developed <strong>CANON</strong> algorithm generates feature maps of Laue 
+            scans without requiring indexing. Additionally, I have implemented a 
+            physics-informed approach to enhance the resolution of Laue scans, enabling 
+            nano-crystal grain mapping with a micron-sized probe. A supervised machine 
+            learning algorithm can also index multi-grain data in minutes. 
+            Below is an example of the mapping produced by this machine learning approach:
+          </p>
+          <!-- Example image -->
+          <div class="images">
+            <img src="images/BaTiO3_1.jpg" alt="BaTiO3 1" />
+            <img src="images/BaTiO3_2.jpg" alt="BaTiO3 2" />
+            <img src="images/BaTiO3_3.jpg" alt="BaTiO3 3" />
+          </div>
+        </section>
+
+        <!-- Automatic SAXS, WAXS, GISAXS, GIWAXS Analysis -->
+        <section>
+          <h2>Automatic SAXS, WAXS, GISAXS, GIWAXS Analysis</h2>
+          <p>
+            X-ray scattering is an extension of standard X-ray diffraction techniques. Many 
+            methods originally developed for X-ray diffraction can be adapted to analyze 
+            scattering data. I have created scripts that automatically subtract background 
+            noise from X-ray scattering data and fit the corresponding peaks. These tools 
+            are especially important for upgraded beamlines that produce higher flux and 
+            generate more data.
+          </p>
+          <!-- Example images -->
+          <div class="images">
+            <img src="images/peak_fitting_dataset_0.png" alt="SAXS/WAXS example 1" />
+          </div>
+        </section>
+
+      </div> <!-- .inner -->
+    </section> <!-- #main -->
+    
+  </div> <!-- #wrapper -->
+
+  <!-- Footer -->
+  <footer id="footer" class="wrapper alt">
+    <div class="inner">
+      <ul class="menu">
+        <li>&copy; Untitled. All rights reserved.</li>
+        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
