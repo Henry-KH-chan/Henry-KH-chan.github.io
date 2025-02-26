@@ -98,7 +98,7 @@
     <!-- Custom Script to Load News from JSON -->
     <script>
       $(document).ready(function() {
-        $.getJSON("news.json", function(data) {
+	$.getJSON("news.json?cacheBust=" + Date.now(), function(data) {
           // Sort news items by date descending
           data.sort(function(a, b) {
             return new Date(b.date) - new Date(a.date);

@@ -158,7 +158,7 @@
 <script>
   $(document).ready(function() {
     // Load news items from the JSON file
-    $.getJSON("news.json", function(data) {
+	$.getJSON("news.json?cacheBust=" + Date.now(), function(data) {
       // Sort news items by date descending
       data.sort(function(a, b) {
         return new Date(b.date) - new Date(a.date);
