@@ -11,6 +11,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  
+  <!-- Custom CSS for the media grid -->
+  <style>
+    /* Responsive Media Grid */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin: 2rem 0;
+    }
+    
+    /* Ensure images and videos fill their container */
+    .media-item img,
+    .media-item video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+    }
+    
+    /* Column span classes */
+    .col-single {
+      grid-column: span 1;
+    }
+    
+    .col-double {
+      grid-column: span 2;
+    }
+    
+    .col-triple {
+      grid-column: span 3;
+    }
+    
+    .col-quadruple {
+      grid-column: span 4;
+    }
+    
+    /* Mobile fallback: single column on narrow screens */
+    @media (max-width: 600px) {
+      .media-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body class="is-preload">
   
@@ -19,10 +63,10 @@
     <a href="index.html" class="title">Henry's Optics</a>
     <nav>
       <ul>
-         <li><a href="index.html">Home</a></li>
-          <li><a href="me.html">Henry</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="me.html">Henry</a></li>
+        <li><a href="research.html" class="active">Research</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
       </ul>
     </nav>
   </header>
@@ -36,89 +80,118 @@
         
         <!-- Main heading -->
         <h1 class="major">Research Highlights</h1>
-            <img src="images/lab.jpg" alt="HKUST lab" style="width: 500px; height: auto;">
+          <div class="media-grid">
+            <div class="media-item col-double">
+              <img src="images/lab.jpg" alt="HKUST Lab">
+            </div>
+            <div class="media-item col-double">
+              <img src="images/transparent.png" alt="HKUST Lab">
+            </div>
+	</div>
         <p>
-          Welcome to my research page. Below are some of my primary research focuses, 
-          including optical microscopy techniques, Laue microdiffraction, and advanced 
-          X-ray scattering analysis methods.
+          Welcome to my research page. Below are some of my primary research focuses, including optical microscopy techniques, Laue microdiffraction, and advanced X-ray scattering analysis methods.
         </p>
 
-        <!-- DInM Microscope -->
+        <!-- DInM Microscope Section -->
         <section>
           <h2>DInM Microscope</h2>
           <p>
-            The DInM microscope is a reflected-light, common-path interferometry technique 
-            designed for real-time surface characterization. With an axial resolution of 
-            around <strong>0.57&nbsp;nm</strong>, it has been successfully applied to measure 
-            step heights, observe in-situ silicon buckling on elastomers, and investigate 
-            martensitic phase transformations.
+            The DInM microscope is a reflected-light, common-path interferometry technique designed for real-time surface characterization. With an axial resolution of around <strong>0.57 nm</strong>, it has been successfully applied to measure step heights, observe in-situ silicon buckling on elastomers, and investigate martensitic phase transformations.
           </p>
           <p>
-            I developed a specialized DInM microscope that can vary the beam shear distance 
-            to study the morphology of specimen surfaces under different conditions. For 
-            further details, refer to 
+            I developed a specialized DInM microscope that can vary the beam shear distance to study specimen surface morphology. For further details, refer to 
             <a href="https://iopscience.iop.org/article/10.1088/1361-6501/ac9ed2/meta">this paper</a>.
           </p>
-          <!-- Example images -->
-  <div class="images">
-    <img src="images/DInM microscope image 1.jpg" alt="DInM microscope image 1" style="width: 500px; height: auto;">
-    <br>
-    <div class="video-container">
-      <video controls style="width: 500px; height: auto;">
-        <source src="videos/NiTi_transformation.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="video-container">
-      <video controls style="width: 500px; height: auto;">
-        <source src="videos/si_buckling.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <img src="images/DInM microscope image 2.jpg" alt="DInM microscope image 2" style="width: 500px; height: auto;">
-  </div>
+          
+<!-- Media grid for DInM Microscope Section -->
+<div class="media-grid">
+  <figure class="media-item col-double">
+    <img src="images/DInM microscope image 1.jpg" alt="DInM Microscope Image 1">
+    <figcaption class="media-caption">
+      Comparison of 3d measurement by DInM and AFM.
+    </figcaption>
+  </figure>
+  
+  <figure class="media-item col-double">
+    <img src="images/DInM microscope image 2.jpg" alt="DInM Microscope Image 2">
+    <figcaption class="media-caption">
+      The morphology of silicon buckling on elastomer.
+    </figcaption>
+  </figure>
+  
+  <figure class="media-item col-double">
+    <video controls>
+      <source src="videos/NiTi_transformation.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <figcaption class="media-caption">
+      NiTi transformation observed under DInM microscope.
+    </figcaption>
+  </figure>
+  
+  <figure class="media-item col-double">
+    <video controls>
+      <source src="videos/si_buckling.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <figcaption class="media-caption">
+      In-situ silicon buckling on elastomers captured in real time.
+    </figcaption>
+  </figure>
+</div>
         </section>
 
-        <!-- Synchrotron Laue Microdiffraction -->
+        <!-- Synchrotron Laue Microdiffraction Section -->
         <section>
           <h2>Synchrotron Laue Microdiffraction</h2>
-            <img src="images/micro_diffraction.jpg" alt="micro diffraction pitch" style="width: 1000px; height: auto;"/>
+          <div class="media-grid">
+            <div class="media-item col-triple">
+              <img src="images/micro_diffraction.jpg" alt="Laue Microdiffraction Mapping">
+            </div>
+            <div class="media-item col-single">
+              <img src="images/transparent.png" alt="BaTiO3 Sample 3">
+            </div>
+	  </div>
           <p>
-            Laue microdiffraction is widely employed to determine crystallographic information, 
-            grain orientations, localized strains, heterogeneous phases, and precipitates 
-            in materials. However, the analysis of Laue microdiffraction data can be both 
-            time-consuming and computationally intensive.
+            Laue microdiffraction is widely employed to obtain crystallographic information, grain orientations, localized strains, heterogeneous phases, and precipitates in materials. However, the analysis of Laue microdiffraction data can be both time-consuming and computationally intensive.
           </p>
           <p>
-            The newly developed <strong>CANON</strong> algorithm generates feature maps of Laue 
-            scans without requiring indexing. Additionally, I have implemented a 
-            physics-informed approach to enhance the resolution of Laue scans, enabling 
-            nano-crystal grain mapping with a micron-sized probe. A supervised machine 
-            learning algorithm can also index multi-grain data in minutes. 
-            Below is an example of the mapping produced by this machine learning approach:
+            The newly developed <strong>CANON</strong> algorithm generates feature maps of Laue scans without the need for indexing. Additionally, I have implemented a physics-informed approach to enhance the resolution of Laue scans, enabling nano-crystal grain mapping with a micron-sized probe. A supervised machine learning algorithm can index multi-grain data within minutes.
           </p>
-          <!-- Example image -->
-          <div class="images">
-            <img src="images/BaTiO3_1.jpg" alt="BaTiO3 1" />
-            <img src="images/BaTiO3_2.jpg" alt="BaTiO3 2" />
-            <img src="images/BaTiO3_3.jpg" alt="BaTiO3 3" />
+          <!-- Media grid for Laue Microdiffraction Section -->
+          <div class="media-grid">
+            <div class="media-item col-single">
+              <img src="images/BaTiO3_1.jpg" alt="BaTiO3 Sample 1">
+            </div>
+            <div class="media-item col-single">
+              <img src="images/BaTiO3_2.jpg" alt="BaTiO3 Sample 2">
+            </div>
+            <div class="media-item col-single">
+              <img src="images/BaTiO3_3.jpg" alt="BaTiO3 Sample 3">
+            </div>
+            <div class="media-item col-single">
+              <img src="images/transparent.png" alt="BaTiO3 Sample 3">
+            </div>
           </div>
         </section>
 
-        <!-- Automatic SAXS, WAXS, GISAXS, GIWAXS Analysis -->
+        <!-- Automatic SAXS, WAXS, GISAXS, GIWAXS Analysis Section -->
         <section>
           <h2>Automatic SAXS, WAXS, GISAXS, GIWAXS Analysis</h2>
           <p>
-            X-ray scattering is an extension of standard X-ray diffraction techniques. Many 
-            methods originally developed for X-ray diffraction can be adapted to analyze 
-            scattering data. I have created scripts that automatically subtract background 
-            noise from X-ray scattering data and fit the corresponding peaks. These tools 
-            are especially important for upgraded beamlines that produce higher flux and 
-            generate more data.
+            X-ray scattering extends traditional X-ray diffraction techniques. Many methods used in X-ray diffraction are adapted to analyze scattering data. I have developed scripts to automatically subtract the background and fit the corresponding peaks—a crucial tool for upgraded beamlines with higher flux and more data.
           </p>
-          <!-- Example images -->
-          <div class="images">
-            <img src="images/peak_fitting_dataset_0.png" alt="SAXS/WAXS example 1" />
+          <!-- Media grid for SAXS/WAXS Analysis Section -->
+          <div class="media-grid">
+            <div class="media-item col-double">
+              <img src="images/peak_fitting_dataset_0.png" alt="Peak Fitting Dataset">
+            </div>
+            <div class="media-item col-single">
+              <img src="images/transparent.png" alt="BaTiO3 Sample 3">
+            </div>
+            <div class="media-item col-single">
+              <img src="images/transparent.png" alt="BaTiO3 Sample 3">
+            </div>
           </div>
         </section>
 
