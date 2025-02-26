@@ -43,6 +43,13 @@
         color: #fff;
         font-size: 0.9rem;
       }
+      /* Intro text style similar to me.html */
+      .intro-text {
+        color: #fff;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+      }
     </style>
   </head>
   <body class="is-preload">
@@ -52,11 +59,11 @@
       <a href="index.html" class="title">Henry's Optics</a>
       <nav>
         <ul>
-            <li><a href="index.html">Welcome</a></li>
-            <li><a href="me.html">Henry (Ka Hung)</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="news.html" class="active">News</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="index.html">Welcome</a></li>
+          <li><a href="me.html">Henry (Ka Hung)</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
         </ul>
       </nav>
     </header>
@@ -68,8 +75,8 @@
       <section id="main" class="wrapper">
         <div class="inner">
           <h1 class="major">Gallery</h1>
-          <p>
-            Welcome to my collection of stunning images that capture my adventures and research moments. Enjoy browsing through the gallery.
+          <p class="intro-text">
+            Welcome to my collection of stunning images capturing both my research moments and personal adventures. Enjoy browsing through the gallery!
           </p>
           
           <!-- Gallery Grid -->
@@ -103,18 +110,21 @@
     <!-- Custom JavaScript to Load Gallery Data -->
     <script>
       $(document).ready(function(){
-        $.getJSON('gallery.json', function(data) {
-          var galleryHTML = '';
-          $.each(data, function(index, item) {
-            galleryHTML += '<div class="gallery-item">';
-            galleryHTML += '<img src="' + item.src + '" alt="' + item.alt + '">';
-            galleryHTML += '<div class="caption">' + item.caption + '</div>';
-            galleryHTML += '</div>';
+        $.getJSON('gallery.json?cacheBust=' + Date.now())
+          .done(function(data) {
+            var galleryHTML = '';
+            $.each(data, function(index, item) {
+              galleryHTML += '<div class="gallery-item">';
+              galleryHTML += '<img src="' + item.src + '" alt="' + item.alt + '">';
+              galleryHTML += '<div class="caption">' + item.caption + '</div>';
+              galleryHTML += '</div>';
+            });
+            $('#gallery-grid').html(galleryHTML);
+          })
+          .fail(function(jqxhr, textStatus, error) {
+            console.error("Could not load gallery data: " + textStatus + ", " + error);
+            $('#gallery-grid').html("<p>Unable to load gallery at this time.</p>");
           });
-          $('#gallery-grid').html(galleryHTML);
-        }).fail(function(){
-          console.error("Could not load gallery data.");
-        });
       });
     </script>
     
