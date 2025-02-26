@@ -7,41 +7,38 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Gallery - Henry's Optics</title>
+    <title>News - Henry's Personal Webpage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript>
-      <link rel="stylesheet" href="assets/css/noscript.css" />
-    </noscript>
-    <!-- Custom CSS for Gallery Layout -->
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <!-- Custom CSS for News items -->
     <style>
-      /* Gallery Grid using CSS Grid */
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-        margin-top: 2rem;
+      .news-item {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #ccc;
       }
-      /* Gallery Item Style */
-      .gallery-item {
-        background: rgba(0, 0, 0, 0.3);
-        padding: 1rem;
-        border-radius: 8px;
-        text-align: center;
-        transition: transform 0.3s ease;
+      .news-item h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #fff;
       }
-      .gallery-item:hover {
-        transform: scale(1.03);
-      }
-      .gallery-item img {
-        width: 100%;
-        height: auto;
-        border-radius: 4px;
+      .news-item time {
+        display: block;
+        font-size: 0.9rem;
+        color: #bbb;
         margin-bottom: 0.5rem;
       }
-      .gallery-item .caption {
+      .news-item p {
+        font-size: 1rem;
+        line-height: 1.6;
         color: #fff;
-        font-size: 0.9rem;
+      }
+      .intro-text {
+        color: #fff;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
       }
     </style>
   </head>
@@ -67,19 +64,17 @@
       <!-- Main Content -->
       <section id="main" class="wrapper">
         <div class="inner">
-          <h1 class="major">Gallery</h1>
-          <p>
-            Welcome to my collection of stunning images that capture my adventures and research moments. Enjoy browsing through the gallery.
+          <h1 class="major">News</h1>
+          <p class="intro-text">
+            Stay up to date with my latest announcements, publications, and events.
           </p>
-          
-          <!-- Gallery Grid -->
-          <div class="gallery-grid" id="gallery-grid">
-            <!-- Gallery items will be loaded here by JavaScript -->
+          <div id="news-container">
+            <!-- News items will be loaded here dynamically -->
           </div>
-        </div> <!-- .inner -->
-      </section> <!-- #main -->
+        </div>
+      </section>
       
-    </div> <!-- #wrapper -->
+    </div>
     
     <!-- Footer -->
     <footer id="footer" class="wrapper alt">
@@ -100,20 +95,27 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     
-    <!-- Custom JavaScript to Load Gallery Data -->
+    <!-- Custom Script to Load News from JSON -->
     <script>
-      $(document).ready(function(){
-        $.getJSON('gallery.json', function(data) {
-          var galleryHTML = '';
-          $.each(data, function(index, item) {
-            galleryHTML += '<div class="gallery-item">';
-            galleryHTML += '<img src="' + item.src + '" alt="' + item.alt + '">';
-            galleryHTML += '<div class="caption">' + item.caption + '</div>';
-            galleryHTML += '</div>';
+      $(document).ready(function() {
+        $.getJSON("news.json", function(data) {
+          // Sort news items by date descending
+          data.sort(function(a, b) {
+            return new Date(b.date) - new Date(a.date);
           });
-          $('#gallery-grid').html(galleryHTML);
-        }).fail(function(){
-          console.error("Could not load gallery data.");
+          var html = "";
+          // Loop through all news items
+          data.forEach(function(item) {
+            html += "<article class='news-item'>";
+            html += "<h3>" + item.title + "</h3>";
+            html += "<time datetime='" + item.date + "'>" + item.date + "</time>";
+            html += "<p>" + item.content + "</p>";
+            html += "</article>";
+          });
+          $("#news-container").html(html);
+        }).fail(function(jqxhr, textStatus, error) {
+          console.error("Failed to load news: " + textStatus + ", " + error);
+          $("#news-container").html("<p>Unable to load news at this time.</p>");
         });
       });
     </script>

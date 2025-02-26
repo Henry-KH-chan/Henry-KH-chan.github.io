@@ -1,32 +1,37 @@
 [
   {
-    "date": "2025-02-25",
-    "title": "Paper Accepted in Journal X",
-    "content": "Our latest research paper on optical imaging techniques has been accepted for publication in Journal X."
+    "date": "2024-08-13",
+    "title": "ALS User Meeting",
+    "content": "Presented my latest research on applying machine learning to Laue microdiffraction at the ALS user meeting."
   },
   {
-    "date": "2025-02-20",
-    "title": "Upcoming Conference",
-    "content": "I will be presenting at the International Imaging Conference next month."
+    "date": "2024-05-01",
+    "title": "ALS Doctoral Fellowship Renewal",
+    "content": "Renewed my ALS doctoral fellowship to advance my research in X-ray diffraction and scattering analysis."
   },
   {
-    "date": "2025-01-15",
-    "title": "New Lab Equipment Installed",
-    "content": "Our lab has been upgraded with state-of-the-art X-ray scattering equipment."
+    "date": "2023-10-27",
+    "title": "Provisional Patent Filed",
+    "content": "Filed Provisional Patent Application No. 63/593,540 for a novel, prism-free beam shear distance measurement method."
   },
   {
-    "date": "2024-12-10",
-    "title": "Research Collaboration Award",
-    "content": "I am honored to receive the Research Collaboration Award for our groundbreaking work in optics."
+    "date": "2023-06-12",
+    "title": "ALS Doctoral Fellowship Awarded",
+    "content": "Awarded the ALS doctoral fellowship, supported by Lawrence Berkeley National Laboratory, to conduct research at the ALS synchrotron facility."
   },
   {
-    "date": "2024-11-01",
-    "title": "New Project Launch",
-    "content": "We are launching a new project focused on advanced interferometry techniques."
+    "date": "2022-11-16",
+    "title": "Paper Accepted in Measurement Science and Technology",
+    "content": "Published a study on the correlation between beam shear distance and step heights—achieving an axial resolution of 0.57 nm with DInM—in Measurement Science and Technology."
   },
   {
-    "date": "2024-10-01",
-    "title": "Grant Awarded",
-    "content": "A significant research grant has been awarded to further our optical imaging research."
+    "date": "2021-12-16",
+    "title": "PQE Passed",
+    "content": "Successfully passed the PQE, paving the way for further research on the prism-free DInM and experimental mechanics."
+  },
+  {
+    "date": "2019-09-01",
+    "title": "HKPFS Fellowship Awarded",
+    "content": "Joined the Sherry Group at HKUST as a PhD student and was awarded the 2019/20 HKPFS (Hong Kong PhD Fellowship Scheme)."
   }
 ]
