@@ -1,34 +1,27 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Feb 25 16:39:18 2025
-
-@author: KHChan
-"""
-
 import os
 import json
 import glob
 
 # Define the gallery folder path (adjust as needed)
-gallery_folder = 'gallery'  # e.g., "gallery" folder in the current directory
+gallery_folder = 'gallery'  # Folder where your images are stored
 
 # Define allowed image extensions
 allowed_extensions = {'.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp'}
 
-# Use glob to find all files in the gallery folder (recursively, if needed)
-# For non-recursive, you can use: glob.glob(os.path.join(gallery_folder, '*'))
+# Get all files in the gallery folder (non-recursive)
 image_files = glob.glob(os.path.join(gallery_folder, '*'))
 
-# Filter out only the files with allowed image extensions
+# Filter the files and create a list of dictionaries with "src", "alt", and "caption" keys
 images = []
 for file_path in image_files:
     ext = os.path.splitext(file_path)[1].lower()
     if ext in allowed_extensions:
-        # If you want just the src path, store it. You can also add more data here.
+        # Normalize the path to use forward slashes
+        normalized_path = file_path.replace(os.sep, '/')
         images.append({
-            "src": file_path
-            "alt": ~
-            "caption": ~
+            "src": normalized_path,
+            "alt": "",
+            "caption": ""
         })
 
 # Write the results to a JSON file
