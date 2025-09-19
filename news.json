@@ -1,8 +1,33 @@
 [
   {
+    "date": "2025-09-19",
+    "title": "Manuscript Accepted!",
+    "content": "Our manuscript on using machine learning algorithms to analyze nano-grains has been accepted for publication in the Journal of Applied Crystallography."
+  },
+  {
+    "date": "2025-09-02",
+    "title": "Starting Postdoc at ALS",
+    "content": "Congratulations to Henry on starting his postdoctoral position at the Advanced Light Source (ALS), where he will work with the DREAM Team on X-ray optics and machine learning projects."
+  },
+  {
+    "date": "2025-08-11",
+    "title": "ALS User Meeting 2025",
+    "content": "Presented my poster on applying machine learning to Laue microdiffraction at the 2025 ALS User Meeting."
+  },
+  {
+    "date": "2025-06-12",
+    "title": "Manuscript Accepted!",
+    "content": "Our manuscript on using resonant tender X-rays to analyze the chain conformation of polymers has been accepted for publication in Macromolecules."
+  },
+  {
+    "date": "2025-03-19",
+    "title": "Thesis Defense Passed!",
+    "content": "Congratulations to Henry on successfully defending his thesis, in which he presented his work on innovative optical methods for experimental mechanics."
+  },
+  {
     "date": "2024-08-13",
     "title": "ALS User Meeting",
-    "content": "Presented my latest research on applying machine learning to Laue microdiffraction at the ALS user meeting."
+    "content": "Presented my poster on applying machine learning to Laue microdiffraction at the ALS user meeting."
   },
   {
     "date": "2024-05-01",
